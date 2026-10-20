@@ -1,0 +1,9 @@
+[
+  "rain_event_sum",
+  "rain_3d",
+  "rain_7d",
+  "elevation",
+  "slope",
+  "tpi",
+  "relative_elevation"
+]

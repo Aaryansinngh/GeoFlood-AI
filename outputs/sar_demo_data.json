@@ -1,0 +1,30 @@
+{
+  "metrics": {
+    "threshold_db": -4.782233623732153,
+    "iou": 0.991,
+    "precision": 1.0,
+    "recall": 0.991,
+    "f1": 0.9955,
+    "total_flooded_sar_cells": 2097,
+    "total_reference_flooded_cells": 2116,
+    "method": "Sentinel-1 VV Backscatter Difference + Otsu Thresholding",
+    "disclaimer": "Detection of observed flooding from satellite radar, NOT predictive susceptibility modeling."
+  },
+  "subregion": {
+    "min_lat": 26.63967514038086,
+    "max_lat": 26.862009048461914,
+    "min_lon": 93.3625717163086,
+    "max_lon": 93.58489990234375,
+    "shape": [
+      100,
+      100
+    ]
+  },
+  "stats": {
+    "mean_pre_vv_db": -10.703814305656698,
+    "mean_post_vv_db": -12.18892980550043,
+    "mean_diff_db": -1.4851154998437313,
+    "sar_flood_pixels": 2097,
+    "ref_flood_pixels": 2116
+  }
+}

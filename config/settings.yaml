@@ -1,0 +1,74 @@
+region:
+  name: "Assam_Brahmaputra_Kaziranga"
+  description: "Brahmaputra River Floodplain in Assam, India (Kaziranga to Jorhat)"
+  bbox:
+    min_lon: 92.80
+    min_lat: 26.30
+    max_lon: 94.20
+    max_lat: 27.20
+  target_crs: "EPSG:4326"
+  target_resolution_deg: 0.002245788  # ~250m at 26.5 deg N
+
+events:
+  primary:
+    event_id: "DFO_4259"
+    name: "Assam Monsoon Flood Wave 1 (June 2015)"
+    began: "2015-06-02"
+    ended: "2015-06-29"
+    gfd_zip_url: "https://storage.googleapis.com/gfd_v1_4/DFO_4259_From_20150602_to_20150629.zip"
+  secondary:
+    event_id: "DFO_4288"
+    name: "Assam Monsoon Flood Wave 2 (August 2015)"
+    began: "2015-08-13"
+    ended: "2015-09-11"
+    gfd_zip_url: "https://storage.googleapis.com/gfd_v1_4/DFO_4288_From_20150813_to_20150911.zip"
+
+terrain:
+  srtm_tiles:
+    - "N26E092"
+    - "N26E093"
+    - "N27E092"
+    - "N27E093"
+  srtm_mirror_url: "https://step.esa.int/auxdata/dem/SRTMGL1"
+
+paths:
+  raw_dir: "data/raw"
+  processed_dir: "data/processed"
+  sample_dir: "data/sample"
+  models_dir: "models"
+  outputs_dir: "outputs"
+  docs_dir: "docs"
+
+data_split:
+  split_type: "spatial_block"  # Options: spatial_block, event_holdout
+  n_blocks_x: 4
+  n_blocks_y: 3
+  test_block_ids: [2, 7, 10]
+  val_block_ids: [3, 6]
+  train_block_ids: [0, 1, 4, 5, 8, 9, 11]
+
+models:
+  logistic_regression:
+    penalty: "l2"
+    C: 1.0
+    solver: "lbfgs"
+    max_iter: 1000
+    class_weight: "balanced"
+    random_state: 42
+  random_forest:
+    n_estimators: 100
+    max_depth: 12
+    min_samples_split: 10
+    min_samples_leaf: 5
+    class_weight: "balanced"
+    random_state: 42
+    n_jobs: -1
+  neural_network:
+    hidden_dims: [64, 32, 16]
+    dropout: 0.2
+    learning_rate: 0.001
+    weight_decay: 0.0001
+    batch_size: 2048
+    epochs: 40
+    early_stopping_patience: 7
+    random_state: 42

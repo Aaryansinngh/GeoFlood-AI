@@ -1,0 +1,177 @@
+[
+  {
+    "lat": 26.3,
+    "lon": 92.8,
+    "rain_3d": 19.1,
+    "rain_7d": 57.1,
+    "rain_event_sum": 694.2
+  },
+  {
+    "lat": 26.3,
+    "lon": 93.15,
+    "rain_3d": 45.9,
+    "rain_7d": 107.4,
+    "rain_event_sum": 626.6
+  },
+  {
+    "lat": 26.3,
+    "lon": 93.5,
+    "rain_3d": 70.2,
+    "rain_7d": 164.6,
+    "rain_event_sum": 654.2
+  },
+  {
+    "lat": 26.3,
+    "lon": 93.85,
+    "rain_3d": 66.9,
+    "rain_7d": 146.7,
+    "rain_event_sum": 509.9
+  },
+  {
+    "lat": 26.3,
+    "lon": 94.2,
+    "rain_3d": 56.099999999999994,
+    "rain_7d": 87.1,
+    "rain_event_sum": 371.6
+  },
+  {
+    "lat": 26.525,
+    "lon": 92.8,
+    "rain_3d": 45.0,
+    "rain_7d": 113.8,
+    "rain_event_sum": 888.7
+  },
+  {
+    "lat": 26.525,
+    "lon": 93.15,
+    "rain_3d": 50.4,
+    "rain_7d": 117.3,
+    "rain_event_sum": 1011.1
+  },
+  {
+    "lat": 26.525,
+    "lon": 93.5,
+    "rain_3d": 85.3,
+    "rain_7d": 157.6,
+    "rain_event_sum": 1275.9
+  },
+  {
+    "lat": 26.525,
+    "lon": 93.85,
+    "rain_3d": 89.5,
+    "rain_7d": 166.9,
+    "rain_event_sum": 1099.2
+  },
+  {
+    "lat": 26.525,
+    "lon": 94.2,
+    "rain_3d": 60.6,
+    "rain_7d": 94.5,
+    "rain_event_sum": 480.3
+  },
+  {
+    "lat": 26.75,
+    "lon": 92.8,
+    "rain_3d": 53.8,
+    "rain_7d": 157.5,
+    "rain_event_sum": 705.5
+  },
+  {
+    "lat": 26.75,
+    "lon": 93.15,
+    "rain_3d": 43.8,
+    "rain_7d": 111.4,
+    "rain_event_sum": 640.4
+  },
+  {
+    "lat": 26.75,
+    "lon": 93.5,
+    "rain_3d": 60.0,
+    "rain_7d": 123.0,
+    "rain_event_sum": 787.7
+  },
+  {
+    "lat": 26.75,
+    "lon": 93.85,
+    "rain_3d": 64.5,
+    "rain_7d": 121.5,
+    "rain_event_sum": 908.2
+  },
+  {
+    "lat": 26.75,
+    "lon": 94.2,
+    "rain_3d": 58.699999999999996,
+    "rain_7d": 96.89999999999999,
+    "rain_event_sum": 521.4
+  },
+  {
+    "lat": 26.975,
+    "lon": 92.8,
+    "rain_3d": 53.1,
+    "rain_7d": 169.1,
+    "rain_event_sum": 754.4
+  },
+  {
+    "lat": 26.975,
+    "lon": 93.15,
+    "rain_3d": 65.1,
+    "rain_7d": 159.9,
+    "rain_event_sum": 703.0
+  },
+  {
+    "lat": 26.975,
+    "lon": 93.5,
+    "rain_3d": 45.5,
+    "rain_7d": 131.6,
+    "rain_event_sum": 498.4
+  },
+  {
+    "lat": 26.975,
+    "lon": 93.85,
+    "rain_3d": 50.0,
+    "rain_7d": 126.8,
+    "rain_event_sum": 592.4
+  },
+  {
+    "lat": 26.975,
+    "lon": 94.2,
+    "rain_3d": 41.3,
+    "rain_7d": 80.8,
+    "rain_event_sum": 444.2
+  },
+  {
+    "lat": 27.2,
+    "lon": 92.8,
+    "rain_3d": 69.9,
+    "rain_7d": 230.5,
+    "rain_event_sum": 1303.1
+  },
+  {
+    "lat": 27.2,
+    "lon": 93.15,
+    "rain_3d": 89.7,
+    "rain_7d": 216.6,
+    "rain_event_sum": 968.5
+  },
+  {
+    "lat": 27.2,
+    "lon": 93.5,
+    "rain_3d": 70.1,
+    "rain_7d": 190.0,
+    "rain_event_sum": 756.6
+  },
+  {
+    "lat": 27.2,
+    "lon": 93.85,
+    "rain_3d": 71.5,
+    "rain_7d": 166.5,
+    "rain_event_sum": 613.7
+  },
+  {
+    "lat": 27.2,
+    "lon": 94.2,
+    "rain_3d": 46.1,
+    "rain_7d": 84.60000000000001,
+    "rain_event_sum": 402.3
+  }
+]

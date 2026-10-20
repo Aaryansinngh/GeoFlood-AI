@@ -1,0 +1,21 @@
+{
+  "project": "GeoFlood AI",
+  "created_at": "2026-10-20T14:44:37.334760",
+  "input_features": [
+    "rain_event_sum",
+    "rain_3d",
+    "rain_7d",
+    "elevation",
+    "slope",
+    "tpi",
+    "relative_elevation"
+  ],
+  "split_type": "spatial_block_holdout",
+  "study_region": "Assam_Brahmaputra_Kaziranga",
+  "primary_event": "DFO_4259",
+  "thresholds": {
+    "logistic_regression": 0.5887805726992252,
+    "random_forest": 0.05604399520405231,
+    "neural_network": 0.4393526613712311
+  }
+}

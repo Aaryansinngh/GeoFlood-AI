@@ -1,0 +1,19 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.pytest_cache/
+
+# Large raw satellite data
+data/raw/*.zip
+data/raw/*.tif
+data/raw/srtm_tiles/
+*.hgt
+
+# Environments
+venv/
+.env
+
+# OS files
+.DS_Store
+Thumbs.db

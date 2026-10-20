@@ -1,0 +1,86 @@
+{
+  "metadata": {
+    "title": "GeoFlood AI Phase 3 Scientific Validation Reproducibility Manifest",
+    "timestamp": "2026-10-21T00:03:16.482849",
+    "python_version": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "machine": "AMD64",
+    "processor": "Intel64 Family 6 Model 186 Stepping 3, GenuineIntel"
+  },
+  "dependencies": {
+    "torch": "2.12.0+cpu",
+    "scikit_learn": "1.8.0",
+    "pandas": "2.3.3",
+    "numpy": "2.4.2",
+    "joblib": "1.5.3",
+    "matplotlib": "3.10.8",
+    "seaborn": "0.13.2"
+  },
+  "dataset_artifacts": {
+    "features_parquet": {
+      "path": "data\\processed\\features.parquet",
+      "sha256": "9c22d992f31027d749e33c44fda86b732a7b38106ea003501954f2ceab16e5f1"
+    },
+    "predictions_parquet": {
+      "path": "outputs\\predictions.parquet",
+      "sha256": "f72a66abb8be1f8918b3feef144a2a8828de3cb72591d1e4b21e74332c4ef089"
+    }
+  },
+  "model_artifacts": {
+    "logistic_regression": {
+      "path": "models\\logistic_regression.joblib",
+      "sha256": "57ca35204dea6386c47c3983aab013a00691a54888ab7ccd0d259edc39d4e42f"
+    },
+    "random_forest": {
+      "path": "models\\random_forest.joblib",
+      "sha256": "6e14493b3a90339763fed7075babef9d5f1823e30765f81bf26876ceaaf2da14"
+    },
+    "neural_network": {
+      "path": "models\\neural_network.pt",
+      "sha256": "ec0256ab88321670ea2f9041fae2ff98af4d5e8ac7d051d652737e6aaa955e66"
+    },
+    "scaler": {
+      "path": "models\\scaler.joblib",
+      "sha256": "ee5b6f3bc9aad699188821c883da5eeaec0b62e9a379722b3db2a1bd7e5dd815"
+    },
+    "model_metadata": {
+      "path": "models\\model_metadata.json",
+      "sha256": "770e069d16548955c78231386df293f75c152fc5d24532f2a241f049c852460f"
+    }
+  },
+  "protocols": {
+    "random_seed": 42,
+    "crs_source": "EPSG:4326",
+    "crs_display": "EPSG:3857",
+    "raster_dimensions": [
+      400,
+      623
+    ],
+    "total_cells_per_event": 249200,
+    "spatial_blocks": {
+      "train_blocks": [
+        0,
+        1,
+        3,
+        4,
+        6,
+        8,
+        9
+      ],
+      "validation_blocks": [
+        5,
+        11
+      ],
+      "test_blocks": [
+        2,
+        7,
+        10
+      ],
+      "buffer_exclusion_distance_km": 1.0
+    },
+    "events": {
+      "primary_event": "DFO_4259 (June 2015)",
+      "cross_event_holdout": "DFO_4288 (August 2015)"
+    }
+  }
+}

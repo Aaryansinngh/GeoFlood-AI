@@ -1,0 +1,96 @@
+{
+  "spatial_block_holdout": {
+    "logistic_regression": {
+      "threshold": 0.5887805726992252,
+      "precision": 0.31666932017194716,
+      "recall": 0.5351089588377724,
+      "f1": 0.397879575915183,
+      "roc_auc": 0.6839713979765573,
+      "pr_auc": 0.3204320766265596,
+      "brier_score": 0.13131216091426087,
+      "false_negative_rate": 0.4648910411622276,
+      "confusion_matrix": {
+        "true_positive": 1989,
+        "false_positive": 4292,
+        "true_negative": 31740,
+        "false_negative": 1728
+      },
+      "sample_count": 39749,
+      "positive_count": 3717,
+      "prevalence": 0.09351178646003673
+    },
+    "random_forest": {
+      "threshold": 0.05604399520405231,
+      "precision": 0.3414027149321267,
+      "recall": 0.8119451170298628,
+      "f1": 0.48068806243529505,
+      "roc_auc": 0.900945187842475,
+      "pr_auc": 0.5069081913864264,
+      "brier_score": 0.07280335122926426,
+      "false_negative_rate": 0.1880548829701372,
+      "confusion_matrix": {
+        "true_positive": 3018,
+        "false_positive": 5822,
+        "true_negative": 30210,
+        "false_negative": 699
+      },
+      "sample_count": 39749,
+      "positive_count": 3717,
+      "prevalence": 0.09351178646003673
+    },
+    "neural_network": {
+      "threshold": 0.4393526613712311,
+      "precision": 0.22000971345313258,
+      "recall": 0.609362389023406,
+      "f1": 0.32329431915501,
+      "roc_auc": 0.8053225698162778,
+      "pr_auc": 0.4483306264039566,
+      "brier_score": 0.1650714278694196,
+      "false_negative_rate": 0.39063761097659405,
+      "confusion_matrix": {
+        "true_positive": 2265,
+        "false_positive": 8030,
+        "true_negative": 28002,
+        "false_negative": 1452
+      },
+      "sample_count": 39749,
+      "positive_count": 3717,
+      "prevalence": 0.09351178646003673
+    }
+  },
+  "event_holdout": {
+    "train_event": "DFO_4259 (June 2015)",
+    "test_event": "DFO_4288 (August 2015)",
+    "neural_network": {
+      "threshold": 0.4393526613712311,
+      "precision": 0.18259369308923606,
+      "recall": 0.8040990526217053,
+      "f1": 0.29760716548485927,
+      "roc_auc": 0.671683813814234,
+      "pr_auc": 0.17241557106004757,
+      "brier_score": 0.2042853402810254,
+      "false_negative_rate": 0.19590094737829472,
+      "confusion_matrix": {
+        "true_positive": 17145,
+        "false_positive": 76752,
+        "true_negative": 74125,
+        "false_negative": 4177
+      },
+      "sample_count": 172199,
+      "positive_count": 21322,
+      "prevalence": 0.1238218572697867
+    }
+  },
+  "timestamp": "2026-10-20T14:44:37.224694",
+  "features": [
+    "rain_event_sum",
+    "rain_3d",
+    "rain_7d",
+    "elevation",
+    "slope",
+    "tpi",
+    "relative_elevation"
+  ],
+  "flood_prevalence_train": 0.07628879508322216,
+  "flood_prevalence_test": 0.09351178646003673
+}
