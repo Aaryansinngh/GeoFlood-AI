@@ -265,13 +265,6 @@ PLOT_LAYOUT = dict(
     paper_bgcolor="#0a1628",
     plot_bgcolor="#0d1e35",
     font=dict(color="#94afd1", size=12),
-    xaxis=dict(gridcolor="#1e3a5f", linecolor="#1e3a5f"),
-    yaxis=dict(gridcolor="#1e3a5f", linecolor="#1e3a5f"),
-    legend=dict(
-        bgcolor="#0d1e35",
-        bordercolor="#1e3a5f",
-        borderwidth=1,
-    ),
     margin=dict(l=40, r=20, t=30, b=30),
 )
 
@@ -282,6 +275,8 @@ SUSCEP_COLORS = {
     "Permanent Water": "#0ea5e9",
     "Unavailable":    "#6b7280",
 }
+# Backward compatibility alias
+SUSC_COLORS = SUSCEP_COLORS
 
 MODEL_COLORS = {
     "neural_network":      "#00d4ff",

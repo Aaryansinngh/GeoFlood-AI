@@ -234,5 +234,28 @@ def build_all_features():
     return df_full
 
 
+def build_features_for_region(region_id: str = "assam", mode: str = "retrospective") -> pd.DataFrame:
+    """
+    GeoFlood-AI 2.0 multi-regional feature pipeline entrypoint.
+    """
+    from src.data.preprocessing.feature_pipeline import RegionalFeaturePipeline
+    from src.data.validation.leakage_guard import ModelingMode
+
+    m = ModelingMode.PRE_EVENT_FORECASTING if mode == "forecasting" else ModelingMode.RETROSPECTIVE_SUSCEPTIBILITY
+    pipeline = RegionalFeaturePipeline(region_id=region_id, mode=m)
+    df, _ = pipeline.run_pipeline()
+    return df
+
+
 if __name__ == "__main__":
-    build_all_features()
+    import argparse
+    parser = argparse.ArgumentParser(description="GeoFlood-AI 2.0 Feature Pipeline")
+    parser.add_argument("--region", type=str, default="assam", help="Target region: assam, kerala, mahanadi, godavari")
+    parser.add_argument("--mode", type=str, default="retrospective", choices=["retrospective", "forecasting"], help="Modeling mode")
+    args = parser.parse_args()
+
+    if args.region == "assam" and args.mode == "retrospective":
+        build_all_features()
+    else:
+        build_features_for_region(region_id=args.region, mode=args.mode)
+

@@ -1,0 +1,30 @@
+{
+  "dataset_name": "NASA_POWER_Daily_Meteorology",
+  "source_name": "NASA Langley Research Center POWER Project",
+  "source_url_or_api": "https://power.larc.nasa.gov/api/temporal/daily/point",
+  "dataset_version": "2.0",
+  "acquisition_timestamp": "2026-11-02T09:07:14.026954+00:00",
+  "region_id": "assam",
+  "geographic_extent": {
+    "min_lat": 26.3,
+    "max_lat": 26.5,
+    "min_lon": 92.8,
+    "max_lon": 93.0
+  },
+  "coordinate_reference_system": "EPSG:4326",
+  "spatial_resolution": "0.5 x 0.625 degree",
+  "temporal_resolution": "Daily",
+  "temporal_coverage": {
+    "start": "2015-06-01",
+    "end": "2015-06-02"
+  },
+  "total_records_or_pixels": 8,
+  "missing_value_count": 0,
+  "missing_value_percentage": 0.0,
+  "data_quality_flag": "VERIFIED_AUTHENTIC",
+  "processing_history": [
+    "Raw data ingested"
+  ],
+  "sha256_checksum": "bb2c001959c7b923ef67e61279bf1af2e217ed1f6093659c18b5d9c2809c63f8",
+  "extra_metadata": {}
+}

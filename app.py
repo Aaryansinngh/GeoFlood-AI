@@ -164,6 +164,44 @@ def compute_all_rasters(df: pd.DataFrame) -> dict:
     return rasters
 
 
+def generate_raster_overlays(
+    df: pd.DataFrame,
+    model_key: str = "neural_network",
+) -> tuple[np.ndarray, np.ndarray, tuple[int, int]]:
+    """
+    Generate RGBA arrays for susceptibility and historical observation overlays.
+    Preserves backward-compatibility for test suites and headless callers.
+    Returns (rgba_suscep, rgba_obs, (height, width)).
+    """
+    ev1 = df[df["event_id"] == "DFO_4259"].sort_values(["row", "col"]) if "event_id" in df.columns and "DFO_4259" in df["event_id"].values else df.sort_values(["row", "col"])
+    h = int(ev1["row"].max() + 1)
+    w = int(ev1["col"].max() + 1)
+
+    col = f"prob_{model_key}"
+    if col not in ev1.columns:
+        col = "susceptibility_prob"
+
+    probs = ev1[col].values.reshape((h, w))
+    perm = ev1["is_perm_water"].values.reshape((h, w))
+
+    rgba_suscep = np.zeros((h, w, 4), dtype=np.uint8)
+    rgba_suscep[perm == 1] = [0, 119, 182, 230]
+
+    hi = (probs >= 0.70) & (perm == 0)
+    rgba_suscep[hi] = [239, 68, 68, 210]
+    mo = (probs >= 0.35) & (probs < 0.70) & (perm == 0)
+    rgba_suscep[mo] = [245, 158, 11, 190]
+    lo = (probs < 0.35) & (perm == 0) & (~np.isnan(probs))
+    rgba_suscep[lo] = [16, 185, 129, 165]
+
+    obs = ev1["flood_label"].values.reshape((h, w)) if "flood_label" in ev1.columns else np.zeros((h, w))
+    rgba_obs = np.zeros((h, w, 4), dtype=np.uint8)
+    rgba_obs[obs == 1.0] = [0, 212, 255, 210]
+    rgba_obs[perm == 1] = [0, 119, 182, 230]
+
+    return rgba_suscep, rgba_obs, (h, w)
+
+
 @st.cache_data(show_spinner="Computing scenario spatial difference…")
 def compute_scenario_diff_rasters(
     df: pd.DataFrame,

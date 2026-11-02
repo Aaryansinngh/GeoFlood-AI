@@ -1,0 +1,77 @@
+region:
+  id: "kerala"
+  name: "Kerala_Periyar_Pamba"
+  description: "Periyar and Pamba River Basins, Central Kerala Floodplains"
+  river_basin: "Periyar-Pamba Catchments"
+  physiographic_zone: "Western Ghats Escarpment & Coastal Alluvial Lowlands"
+  bbox:
+    min_lat: 9.30
+    max_lat: 10.35
+    min_lon: 76.15
+    max_lon: 77.05
+  centroid:
+    lat: 9.825
+    lon: 76.60
+  target_crs: "EPSG:4326"
+  projected_metric_crs: "EPSG:32643"  # UTM Zone 43N (WGS 84)
+  target_resolution_deg: 0.002245788  # ~250m
+  target_resolution_meters: 250.0
+
+events:
+  primary:
+    event_id: "DFO_4684"
+    name: "Kerala Deluge Peak Wave (August 2018)"
+    began: "2018-08-08"
+    ended: "2018-08-25"
+    peak_date: "2018-08-16"
+    lead_time_days: 3
+    gfd_zip_url: "https://storage.googleapis.com/gfd_v1_4/DFO_4684_From_20180808_to_20180825.zip"
+  secondary:
+    event_id: "DFO_4803"
+    name: "Kerala Monsoon Flood Wave (August 2019)"
+    began: "2019-08-08"
+    ended: "2019-08-19"
+    peak_date: "2019-08-12"
+    lead_time_days: 3
+    gfd_zip_url: "https://storage.googleapis.com/gfd_v1_4/DFO_4803_From_20190808_to_20190819.zip"
+
+terrain:
+  srtm_tiles:
+    - "N09E076"
+    - "N09E077"
+    - "N10E076"
+    - "N10E077"
+  srtm_mirror_url: "https://step.esa.int/auxdata/dem/SRTMGL1"
+  elevation_bounds:
+    min_m: -2.0  # Kuttanad below sea level
+    max_m: 2695.0 # Anamudi peak
+
+landmarks:
+  - name: "Aluva (Periyar Bank)"
+    lat: 10.1076
+    lon: 76.3516
+    type: "River Confluence / Urban Flooding"
+  - name: "Kuttanad Below-Sea-Level Lowlands"
+    lat: 9.4833
+    lon: 76.4000
+    type: "Deltaic Wetland / Depression"
+  - name: "Chalakudy"
+    lat: 10.3070
+    lon: 76.3335
+    type: "Flash Flood Fluvial Corridor"
+  - name: "Chengannur (Pamba Basin)"
+    lat: 9.3174
+    lon: 76.6111
+    type: "Upstream Inundation Zone"
+  - name: "Kochi Port"
+    lat: 9.9667
+    lon: 76.2667
+    type: "Estuarine Tidal Outlet"
+
+vulnerable_districts:
+  - "Ernakulam"
+  - "Thrissur"
+  - "Alappuzha"
+  - "Pathanamthitta"
+  - "Kottayam"
+  - "Idukki"
