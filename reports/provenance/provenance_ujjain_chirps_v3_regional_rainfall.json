@@ -1,0 +1,41 @@
+{
+  "dataset_name": "CHIRPS_V3_Regional_Rainfall",
+  "source_name": "CHC / WFP CHIRPS v3 Daily RNL",
+  "source_url_or_api": "https://data.source.coop/wfp/chirps-rnl-daily/v3.0",
+  "dataset_version": "3.0-RNL",
+  "acquisition_timestamp": "2026-11-11T20:19:50.260913+00:00",
+  "region_id": "ujjain",
+  "geographic_extent": {
+    "min_lat": 23.12,
+    "max_lat": 23.25,
+    "min_lon": 75.68,
+    "max_lon": 75.85
+  },
+  "coordinate_reference_system": "EPSG:4326",
+  "spatial_resolution": "0.05 degree (~5 km)",
+  "temporal_resolution": "Daily",
+  "temporal_coverage": {
+    "start": "2024-07-15",
+    "end": "2024-07-17"
+  },
+  "total_records_or_pixels": 12,
+  "missing_value_count": 4,
+  "missing_value_percentage": 33.333,
+  "data_quality_flag": "DEGRADED",
+  "processing_history": [
+    "Remote regional COG acquisition",
+    "NoData preservation",
+    "Daily rainfall extraction",
+    "3-day rainfall aggregation",
+    "7-day rainfall aggregation",
+    "30-day rainfall aggregation"
+  ],
+  "sha256_checksum": "a3b862489c36ccf2f6b89400b7d26848347e612c7dc54a249d5bae68ae9644d2",
+  "extra_metadata": {
+    "missing_dates": [
+      "2024-07-16"
+    ],
+    "cached_days": 0,
+    "downloaded_days": 2
+  }
+}

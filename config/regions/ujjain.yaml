@@ -1,0 +1,44 @@
+﻿region:
+  id: "ujjain"
+  name: "Ujjain_Shipra"
+  description: "Shipra River flood and evacuation study area around Ujjain, Madhya Pradesh"
+  river_basin: "Shipra"
+  physiographic_zone: "Malwa Plateau"
+  bbox:
+    min_lat: 23.12
+    max_lat: 23.25
+    min_lon: 75.68
+    max_lon: 75.85
+  centroid:
+    lat: 23.1828
+    lon: 75.7683
+  target_crs: "EPSG:4326"
+  projected_metric_crs: "EPSG:32643"
+  target_resolution_deg: 0.002245788
+  target_resolution_meters: 250.0
+
+events: {}
+
+terrain:
+  srtm_tiles:
+    - "N23E075"
+  srtm_mirror_url: "https://step.esa.int/auxdata/dem/SRTMGL1"
+
+landmarks:
+  - name: "Ram Ghat"
+    lat: 23.1828
+    lon: 75.7683
+    type: "Shipra River / Study Reference Point"
+
+  - name: "Mahakaleshwar Temple"
+    lat: 23.1828
+    lon: 75.7685
+    type: "Urban Landmark"
+
+  - name: "Ujjain Junction"
+    lat: 23.1785
+    lon: 75.7850
+    type: "Transport Landmark"
+
+vulnerable_districts:
+  - "Ujjain"

@@ -1,0 +1,30 @@
+{
+  "dataset_name": "SRTMGL1_Digital_Elevation_Model",
+  "source_name": "ESA STEP SRTMGL1 Mirror",
+  "source_url_or_api": "https://step.esa.int/auxdata/dem/SRTMGL1",
+  "dataset_version": "GL1 v003",
+  "acquisition_timestamp": "2026-11-11T19:42:11.378459+00:00",
+  "region_id": "ujjain",
+  "geographic_extent": {
+    "min_lat": 23.12,
+    "max_lat": 23.25,
+    "min_lon": 75.68,
+    "max_lon": 75.85
+  },
+  "coordinate_reference_system": "EPSG:4326",
+  "spatial_resolution": "1 arc-second (~30 m)",
+  "temporal_resolution": "Static Baseline (Feb 2000)",
+  "temporal_coverage": {
+    "start": "2000-02-11",
+    "end": "2000-02-22"
+  },
+  "total_records_or_pixels": 286416,
+  "missing_value_count": 0,
+  "missing_value_percentage": 0.0,
+  "data_quality_flag": "VERIFIED_AUTHENTIC",
+  "processing_history": [
+    "Raw data ingested"
+  ],
+  "sha256_checksum": "1349cbc984041960f0de184030df27e0def145095558590a561666f42b6abacb",
+  "extra_metadata": {}
+}
