@@ -3,7 +3,7 @@
   "source_name": "NASA Langley Research Center POWER Project",
   "source_url_or_api": "https://power.larc.nasa.gov/api/temporal/daily/point",
   "dataset_version": "2.0",
-  "acquisition_timestamp": "2026-11-02T09:07:14.026954+00:00",
+  "acquisition_timestamp": "2026-11-14T16:45:33.492196+00:00",
   "region_id": "assam",
   "geographic_extent": {
     "min_lat": 26.3,

@@ -3,7 +3,7 @@
   "source_name": "CHC / WFP CHIRPS v3 Daily RNL",
   "source_url_or_api": "https://data.source.coop/wfp/chirps-rnl-daily/v3.0",
   "dataset_version": "3.0-RNL",
-  "acquisition_timestamp": "2026-11-11T20:19:50.260913+00:00",
+  "acquisition_timestamp": "2026-11-14T16:45:31.432075+00:00",
   "region_id": "ujjain",
   "geographic_extent": {
     "min_lat": 23.12,
@@ -30,7 +30,7 @@
     "7-day rainfall aggregation",
     "30-day rainfall aggregation"
   ],
-  "sha256_checksum": "a3b862489c36ccf2f6b89400b7d26848347e612c7dc54a249d5bae68ae9644d2",
+  "sha256_checksum": "60b30308fb2760a4cd28b930fc3698695c3d749fc3ac9d44fdaedd76a794683a",
   "extra_metadata": {
     "missing_dates": [
       "2024-07-16"

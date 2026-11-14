@@ -22,4 +22,7 @@ __all__ = [
     "Era5Client",
     "DemClient",
     "GfdClient",
+    "ChirpsV3RegionalClient",
 ]
+
+from src.data.acquisition.chirps_v3 import ChirpsV3RegionalClient

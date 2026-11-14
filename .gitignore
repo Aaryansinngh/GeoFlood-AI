@@ -17,3 +17,29 @@ venv/
 # OS files
 .DS_Store
 Thumbs.db
+
+# Virtual environments
+venv/
+.venv/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Local caches and generated data
+cache/
+data/cache/
+data/processed/ujjain/
+data/raw/*.osm.pbf
+
+# Backups
+backups/
+*.backup
+*.backup-*
+*_backup.py
+ui_tab_before_*.py
+
+# Secrets
+.env
+.env.*
+!.env.example

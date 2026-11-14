@@ -1,4 +1,4 @@
-"""
+﻿"""
 src/geospatial/region_manager.py
 
 GeoFlood-AI 2.0 Regional Configuration & Geospatial Boundary Manager.
@@ -84,15 +84,14 @@ class RegionMetadata:
 class RegionManager:
     """
     Central registry and manager for multi-regional flood analysis.
-    Supports loading from configs/regions or config/regions.
+    Uses config/regions as the canonical regional configuration directory.
     """
 
-    SUPPORTED_REGIONS = ["assam", "kerala", "mahanadi", "godavari"]
+    SUPPORTED_REGIONS = ["assam", "kerala", "mahanadi", "godavari", "ujjain"]
 
     def __init__(self, config_dirs: Optional[List[Union[str, Path]]] = None):
         if config_dirs is None:
             self.config_dirs = [
-                Path("configs/regions"),
                 Path("config/regions"),
                 Path("config"),
             ]

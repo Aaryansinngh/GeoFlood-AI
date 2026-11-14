@@ -39,7 +39,7 @@ The application provides:
 
 | Feature | Description |
 |---|---|
-| Interactive flood susceptibility map | Folium raster overlay for 3 models |
+| Interactive flood susceptibility map | Folium raster overlay on OpenStreetMap basemap for 3 models |
 | Coordinate-based location analysis | Single-cell inspection, feature retrieval, inference |
 | Multi-model comparison | LR vs RF vs NN side-by-side at a location |
 | Rainfall scenario simulation | Vary antecedent rainfall, observe probability shift |

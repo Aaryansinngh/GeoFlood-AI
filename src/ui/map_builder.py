@@ -115,9 +115,9 @@ def build_base_map(
     bounds: list,
     center_lat: float,
     center_lon: float,
-    tiles: str = "CartoDB dark_matter",
+    tiles: str = "OpenStreetMap",
 ) -> folium.Map:
-    """Create a Folium map centred on the study area with dark basemap."""
+    """Create a Folium map centred on the study area with OpenStreetMap basemap."""
     m = folium.Map(
         location=[center_lat, center_lon],
         zoom_start=9,

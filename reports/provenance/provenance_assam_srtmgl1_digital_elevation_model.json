@@ -3,7 +3,7 @@
   "source_name": "ESA STEP SRTMGL1 Mirror",
   "source_url_or_api": "https://step.esa.int/auxdata/dem/SRTMGL1",
   "dataset_version": "GL1 v003",
-  "acquisition_timestamp": "2026-11-02T09:07:14.066552+00:00",
+  "acquisition_timestamp": "2026-11-14T16:45:33.514269+00:00",
   "region_id": "assam",
   "geographic_extent": {
     "min_lat": 26.3,

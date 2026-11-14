@@ -1,0 +1,42 @@
+﻿study_area:
+  id: "guwahati"
+  name: "Guwahati Evacuation Study Area"
+  city: "Guwahati"
+  state: "Assam"
+  country: "India"
+
+  centre:
+    latitude: 26.1445
+    longitude: 91.7362
+
+  radius_m: 5000
+
+  crs:
+    geographic: "EPSG:4326"
+    projected: "EPSG:32646"
+
+  data:
+    dem: "data/raw/srtm_dem_study_area.tif"
+
+    historical_flood_events:
+      - id: "DFO_4259"
+        path: "data/raw/DFO_4259_From_20150602_to_20150629.tif"
+        date: "2015-06"
+
+      - id: "DFO_4288"
+        path: "data/raw/DFO_4288_From_20150813_to_20150911.tif"
+        date: "2015-08"
+
+  risk:
+    source: "historical_and_terrain_proxy"
+    probability_available: false
+    historical_band: 1
+    duration_band: 2
+    clear_views_band: 3
+    clear_percentage_band: 4
+    permanent_water_band: 5
+
+  routing:
+    network_type: "drive"
+    default_speed_kmph: 30
+    risk_lambda: 10
