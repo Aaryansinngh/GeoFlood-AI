@@ -256,6 +256,10 @@ GeoFlood-AI/
 â””â”€â”€ tests/                          # 36 tests across 4 files (all passing)
 ```
 
+
+## Project Presentation
+
+[View GeoFlood-AI Final Pitch Deck](docs/GeoFlood_AI_Pitch_Deck.pptx)
 ---
 
 *GeoFlood AI â€” Academic PBL Prototype. Not for operational use.*
