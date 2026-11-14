@@ -1,5 +1,14 @@
-# GeoFlood AI — Event-Based Flood Susceptibility Mapping
+﻿# GeoFlood AI â€” Event-Based Flood Susceptibility Mapping
 
+## 🚀 Live Demo
+
+**Try GeoFlood-AI here:**
+
+[🌊 Launch GeoFlood-AI](https://geoflood-ai.streamlit.app/)
+
+Explore the interactive flood intelligence, geospatial analysis, and evacuation decision-support dashboard.
+
+---
 > **What this system does:** For each grid cell in a defined study region, it
 > estimates the **probability that the cell was inundated during a documented
 > historical flood event**, given terrain and antecedent/concurrent rainfall
@@ -32,7 +41,7 @@ academic PBL (Project-Based Learning) demonstration. It implements one complete,
 honest pipeline:
 
 ```
-satellite-derived data → feature table → trained models → evaluation → interactive map
+satellite-derived data â†’ feature table â†’ trained models â†’ evaluation â†’ interactive map
 ```
 
 The application provides:
@@ -54,12 +63,12 @@ The application provides:
 | Property | Value |
 |---|---|
 | Region | Brahmaputra River basin, Assam, India |
-| Bounding box | Approx. 25.5°–27.5°N, 91.5°–95.5°E |
-| Grid | 400 rows × 623 columns = **249,200 cells** |
-| Cell size | ~500 m × ~500 m |
+| Bounding box | Approx. 25.5Â°â€“27.5Â°N, 91.5Â°â€“95.5Â°E |
+| Grid | 400 rows Ã— 623 columns = **249,200 cells** |
+| Cell size | ~500 m Ã— ~500 m |
 | CRS | EPSG:4326 (WGS84 geographic) |
-| Training event | DFO_4259 — June 2012 Assam flood |
-| Cross-event test | DFO_4288 — August 2015 Assam flood |
+| Training event | DFO_4259 â€” June 2012 Assam flood |
+| Cross-event test | DFO_4288 â€” August 2015 Assam flood |
 
 ---
 
@@ -67,12 +76,12 @@ The application provides:
 
 | Layer | Source | Resolution | Notes |
 |---|---|---|---|
-| Flood inundation labels | Global Flood Database (GFD) — MODIS-derived | ~500 m | Cloud-masked binary raster per event |
-| Elevation | SRTM GL1 (NASA) | 30 m → resampled to 500 m | |
+| Flood inundation labels | Global Flood Database (GFD) â€” MODIS-derived | ~500 m | Cloud-masked binary raster per event |
+| Elevation | SRTM GL1 (NASA) | 30 m â†’ resampled to 500 m | |
 | Slope, TPI, Relative elevation | Derived from SRTM DEM | 500 m | Computed via rasterio / numpy |
-| 3-day antecedent rainfall | ERA5 / GPM IMERG | ~10 km → interpolated | Pre-event accumulation |
-| 7-day antecedent rainfall | ERA5 / GPM IMERG | ~10 km → interpolated | Pre-event accumulation |
-| Event-sum rainfall | ERA5 / GPM IMERG | ~10 km → interpolated | Full 28-day event window (post-event — see Limitations) |
+| 3-day antecedent rainfall | ERA5 / GPM IMERG | ~10 km â†’ interpolated | Pre-event accumulation |
+| 7-day antecedent rainfall | ERA5 / GPM IMERG | ~10 km â†’ interpolated | Pre-event accumulation |
+| Event-sum rainfall | ERA5 / GPM IMERG | ~10 km â†’ interpolated | Full 28-day event window (post-event â€” see Limitations) |
 
 ---
 
@@ -90,7 +99,7 @@ Nine features per grid cell:
 | `flow_accumulation` | Terrain | Static |
 | `rain_3d` | Hydro-meteorological | **Pre-event** |
 | `rain_7d` | Hydro-meteorological | **Pre-event** |
-| `rain_event_sum` | Hydro-meteorological | ⚠️ **Post-event** — see Limitations |
+| `rain_event_sum` | Hydro-meteorological | âš ï¸ **Post-event** â€” see Limitations |
 
 ---
 
@@ -103,7 +112,7 @@ Nine features per grid cell:
 | Neural Network | PyTorch MLP (3 hidden layers, BatchNorm, Dropout) | Trained 50 epochs, Adam optimizer |
 
 Decision thresholds and probability calibrators (Platt / Isotonic) are fitted
-on **validation blocks 5 & 11** only — the test set is never seen during threshold
+on **validation blocks 5 & 11** only â€” the test set is never seen during threshold
 or calibrator selection.
 
 ---
@@ -114,14 +123,14 @@ Three nested evaluation protocols are used, each progressively more stringent:
 
 ### 6.1 Spatial Block Holdout
 
-Grid divided into 12 spatial blocks (3×4). Blocks 2, 7, 10 form the test set
+Grid divided into 12 spatial blocks (3Ã—4). Blocks 2, 7, 10 form the test set
 (~39,749 cells). Threshold selected on validation blocks 5 & 11.
 
 | Model | ROC-AUC | PR-AUC | F1 | Brier Skill Score |
 |---|---|---|---|---|
-| Logistic Regression | 0.684 | 0.320 | 0.398 | −0.549 |
+| Logistic Regression | 0.684 | 0.320 | 0.398 | âˆ’0.549 |
 | Random Forest | **0.901** | **0.507** | 0.481 | +0.141 |
-| Neural Network (Uncalibrated) | 0.805 | 0.448 | 0.323 | −0.947 |
+| Neural Network (Uncalibrated) | 0.805 | 0.448 | 0.323 | âˆ’0.947 |
 | Neural Network (Platt Calibrated) | 0.805 | 0.448 | 0.415 | **+0.180** |
 
 ### 6.2 Spatially Buffered Holdout (1 km)
@@ -132,8 +141,8 @@ by spatial autocorrelation boundary bleed.
 
 | Model | ROC-AUC | Change vs Block Holdout |
 |---|---|---|
-| Random Forest | 0.908 | +0.007 (metrics *improve* → no bleed) |
-| Neural Network | 0.816 | +0.011 (metrics *improve* → no bleed) |
+| Random Forest | 0.908 | +0.007 (metrics *improve* â†’ no bleed) |
+| Neural Network | 0.816 | +0.011 (metrics *improve* â†’ no bleed) |
 
 ### 6.3 Cross-Event Holdout (DFO_4288)
 
@@ -142,11 +151,11 @@ Models trained on June 2012 flood evaluated on August 2015 flood (~172,199 cells
 
 | Model | ROC-AUC | Change vs Block Holdout |
 |---|---|---|
-| Logistic Regression | 0.713 | −0.029 (moderate degradation) |
-| **Random Forest** | **0.485** | **−0.416 (near-random collapse)** |
-| Neural Network | 0.672 | −0.133 (significant but not catastrophic) |
+| Logistic Regression | 0.713 | âˆ’0.029 (moderate degradation) |
+| **Random Forest** | **0.485** | **âˆ’0.416 (near-random collapse)** |
+| Neural Network | 0.672 | âˆ’0.133 (significant but not catastrophic) |
 
-> ⚠️ **Critical finding:** Random Forest collapses to near-random on temporal
+> âš ï¸ **Critical finding:** Random Forest collapses to near-random on temporal
 > cross-event validation. It must not be used for cross-season or operational
 > claims. See `reports/generalisation_evaluation.md`.
 
@@ -168,23 +177,23 @@ Models trained on June 2012 flood evaluated on August 2015 flood (~172,199 cells
 ## 8. Reproduction Commands
 
 ```bash
-# Step 1 — Download raw satellite data
+# Step 1 â€” Download raw satellite data
 python -m src.data.download_raw
 
-# Step 2 — Build feature table (features.parquet)
+# Step 2 â€” Build feature table (features.parquet)
 python -m src.data.build_features
 
-# Step 3 — Train all models (saves to models/)
+# Step 3 â€” Train all models (saves to models/)
 python -m src.models.train
 
-# Step 4 — Run scientific validation pipeline
+# Step 4 â€” Run scientific validation pipeline
 #          (generates reports/phase3_metrics.csv, reports/figures/, etc.)
 python -m src.evaluation.run_validation
 
-# Step 5 — Launch interactive application
+# Step 5 â€” Launch interactive application
 python -m streamlit run app.py
 
-# Step 6 — Run full test suite (36 tests)
+# Step 6 â€” Run full test suite (36 tests)
 python -m pytest tests/ -v
 ```
 
@@ -204,12 +213,12 @@ Tested on Python 3.12. Key dependencies: `streamlit`, `streamlit-folium`, `foliu
 The following capabilities are explicitly **out of scope** for this prototype and
 are listed here for academic completeness:
 
-- **Real-time flood forecasting** — requires NWP model coupling and sub-hourly data
-- **Operational early warning** — requires lead-time validation, false-alarm analysis, and institutional approval
-- **Multi-basin generalisation** — requires representative training data across climatic zones
-- **Real SAR integration** — requires Copernicus/ESA API access and atmospheric correction
-- **Ensemble uncertainty quantification** — requires calibrated multi-model posterior sampling
-- **Dynamic risk index** — requires temporal updating and event-specific threshold tuning
+- **Real-time flood forecasting** â€” requires NWP model coupling and sub-hourly data
+- **Operational early warning** â€” requires lead-time validation, false-alarm analysis, and institutional approval
+- **Multi-basin generalisation** â€” requires representative training data across climatic zones
+- **Real SAR integration** â€” requires Copernicus/ESA API access and atmospheric correction
+- **Ensemble uncertainty quantification** â€” requires calibrated multi-model posterior sampling
+- **Dynamic risk index** â€” requires temporal updating and event-specific threshold tuning
 
 ---
 
@@ -217,37 +226,38 @@ are listed here for academic completeness:
 
 ```
 GeoFlood-AI/
-├── app.py                          # Main Streamlit application (7 tabs)
-├── requirements.txt
-├── config/settings.yaml
-├── data/
-│   ├── raw/                        # Raw GFD, SRTM, ERA5 downloads
-│   ├── processed/features.parquet  # 498,400 rows (2 events × 249,200 cells)
-│   └── sample/                     # Sample data (labelled SAMPLE DATA)
-├── models/                         # Saved model artifacts
-│   ├── nn_model.pt
-│   ├── random_forest.pkl
-│   ├── logistic_regression.pkl
-│   ├── scaler.pkl
-│   └── metrics.json
-├── outputs/predictions.parquet     # 249,200 cells with per-model probabilities
-├── reports/
-│   ├── phase3_metrics.csv          # 12-row empirical evaluation table
-│   ├── evaluation_summary.json     # Full JSON with feature importance & Brier
-│   ├── feature_availability.csv    # Feature leakage audit
-│   ├── phase3_scientific_audit.md  # 13-stage pipeline audit
-│   ├── generalisation_evaluation.md
-│   ├── sar_validation_audit.md
-│   └── figures/                    # ROC, PR, reliability, confusion, permutation importance PNGs
-├── src/
-│   ├── data/                       # Data download & feature engineering
-│   ├── models/                     # Training, inference, fuzzy layer
-│   ├── geo/                        # SAR detection, location analysis
-│   └── evaluation/                 # run_validation.py — Phase 3 pipeline
-└── tests/                          # 36 tests across 4 files (all passing)
+â”œâ”€â”€ app.py                          # Main Streamlit application (7 tabs)
+â”œâ”€â”€ requirements.txt
+â”œâ”€â”€ config/settings.yaml
+â”œâ”€â”€ data/
+â”‚   â”œâ”€â”€ raw/                        # Raw GFD, SRTM, ERA5 downloads
+â”‚   â”œâ”€â”€ processed/features.parquet  # 498,400 rows (2 events Ã— 249,200 cells)
+â”‚   â””â”€â”€ sample/                     # Sample data (labelled SAMPLE DATA)
+â”œâ”€â”€ models/                         # Saved model artifacts
+â”‚   â”œâ”€â”€ nn_model.pt
+â”‚   â”œâ”€â”€ random_forest.pkl
+â”‚   â”œâ”€â”€ logistic_regression.pkl
+â”‚   â”œâ”€â”€ scaler.pkl
+â”‚   â””â”€â”€ metrics.json
+â”œâ”€â”€ outputs/predictions.parquet     # 249,200 cells with per-model probabilities
+â”œâ”€â”€ reports/
+â”‚   â”œâ”€â”€ phase3_metrics.csv          # 12-row empirical evaluation table
+â”‚   â”œâ”€â”€ evaluation_summary.json     # Full JSON with feature importance & Brier
+â”‚   â”œâ”€â”€ feature_availability.csv    # Feature leakage audit
+â”‚   â”œâ”€â”€ phase3_scientific_audit.md  # 13-stage pipeline audit
+â”‚   â”œâ”€â”€ generalisation_evaluation.md
+â”‚   â”œâ”€â”€ sar_validation_audit.md
+â”‚   â””â”€â”€ figures/                    # ROC, PR, reliability, confusion, permutation importance PNGs
+â”œâ”€â”€ src/
+â”‚   â”œâ”€â”€ data/                       # Data download & feature engineering
+â”‚   â”œâ”€â”€ models/                     # Training, inference, fuzzy layer
+â”‚   â”œâ”€â”€ geo/                        # SAR detection, location analysis
+â”‚   â””â”€â”€ evaluation/                 # run_validation.py â€” Phase 3 pipeline
+â””â”€â”€ tests/                          # 36 tests across 4 files (all passing)
 ```
 
 ---
 
-*GeoFlood AI — Academic PBL Prototype. Not for operational use.*
+*GeoFlood AI â€” Academic PBL Prototype. Not for operational use.*
 *All displayed metrics come from real pipeline runs. No numbers are fabricated.*
+
