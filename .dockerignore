@@ -1,0 +1,32 @@
+﻿.git
+.gitignore
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+backups/
+scratch/
+cache/
+tests/
+*.log
+.env
+.env.*
+.streamlit/secrets.toml
+
+# Exclude raw datasets except required deployment rasters
+data/raw/*
+!data/raw/DFO_4259_From_20150602_to_20150629.tif
+!data/raw/DFO_4288_From_20150813_to_20150911.tif
+!data/raw/srtm_dem_study_area.tif
+
+# Exclude cached datasets except required evacuation assets
+data/cache/*
+!data/cache/evacuation/
+
+data/cache/evacuation/*
+!data/cache/evacuation/guwahati_buildings.geojson
+!data/cache/evacuation/guwahati_candidate_shelters.geojson
+!data/cache/evacuation/guwahati_drive_5000m.graphml
+!data/cache/evacuation/guwahati_drive_5000m_risk.graphml
+
